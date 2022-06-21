@@ -1,0 +1,1 @@
+start "" LuaMacros -r identify_device.lua
