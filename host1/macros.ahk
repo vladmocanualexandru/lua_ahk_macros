@@ -160,4 +160,6 @@ else if (wrappedKey = "29B40438_13" or wrappedKey = "5018BD5_83") {
 } else {
 	Send, % %wrappedKey%
 }
+
+FileDelete, D:\Temp\lua_keypress.txt
 return
