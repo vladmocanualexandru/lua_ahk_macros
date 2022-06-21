@@ -1,25 +1,45 @@
 from cryptography.fernet import Fernet
 import base64, sys
 
-encryptedPasswords = []
-key = None
+TEMPORARY_PASSWORD_FILE='D:/Temp/pass.txt'
 
-encryptedPasswordsPath = sys.argv[1]
-with open(encryptedPasswordsPath) as f:
-    for line in f.readlines():
-        encryptedPasswords.append(line.strip())
+def decryptString(str, key):
+    fernetKey = Fernet(base64.b64encode(key.encode('ascii')))
+    return fernetKey.decrypt(str.encode()).decode()
 
-keyFile = sys.argv[2]
-with open(keyFile) as f:
-    lines = f.readlines()
-    key = lines[0]
+try:
+    # read encrypted passwords from file
+    encryptedPasswords = []
+    with open(sys.argv[1]) as f:
+        for line in f.readlines():
+            encryptedPasswords.append(line.strip())
 
-fernetKey = Fernet(base64.b64encode(key.encode('ascii')))
+    # read local key (not encrypted)
+    localKey = None
+    with open(sys.argv[2]) as f:
+        lines = f.readlines()
+        localKey = lines[0]
 
-passwordIndex = int(sys.argv[3])
-decryptedPassword = fernetKey.decrypt(encryptedPasswords[passwordIndex].encode()).decode()
+    # read encrypted remote key
+    encryptedRemoteKey = None
+    with open(sys.argv[3]) as f:
+        lines = f.readlines()
+        encryptedRemoteKey = lines[0]
 
-with open('D:/Temp/pass.txt', 'w') as f:
-    f.write(decryptedPassword)
+    # decrypt remote key using local key
+    remoteKey = decryptString(encryptedRemoteKey, localKey)
 
-print("password decrypted")
+    # according to the specified index, decrypt, using the remote key, one of the encrypted passwords
+    passwordIndex = int(sys.argv[4])
+    decryptedPassword = decryptString(encryptedPasswords[passwordIndex], remoteKey)
+
+    # save unencrypted password to temporary file (this file should be deleted after this script)
+    with open(TEMPORARY_PASSWORD_FILE, 'w') as f:
+        f.write(decryptedPassword)
+
+    print("password decrypted")
+except:
+    # in case anything goes wrong, write ERROR to the temporary password file
+    print("ERROR")
+    with open(TEMPORARY_PASSWORD_FILE, 'w') as f:
+        f.write("ERROR")

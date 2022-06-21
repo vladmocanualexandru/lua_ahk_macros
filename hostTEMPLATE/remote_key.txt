@@ -1,0 +1,2 @@
+A 32 char key used to encrypt the actual passwords, and obviously, needed to decrypt the passwords
+This key must be encrypted using the local key
