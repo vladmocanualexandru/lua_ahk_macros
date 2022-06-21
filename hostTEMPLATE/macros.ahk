@@ -106,7 +106,7 @@ If (wrappedKey = "29B40438_34" or wrappedKey = "29B40438_99") {
 	Run, D:\Repositories\git_pc_stats\start_raspi.bat
 }
 else if (wrappedKey = "5018BD5_67") {
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password_0.bat
+	Run, D:\Repositories\git-macros-lua-ahk\decrypt_password_0.bat
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
@@ -114,7 +114,7 @@ else if (wrappedKey = "5018BD5_67") {
 	Send, {Enter}
 }
 else if (wrappedKey = "5018BD5_88") {
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password_1.bat
+	Run, D:\Repositories\git-macros-lua-ahk\decrypt_password_1.bat
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
@@ -122,7 +122,7 @@ else if (wrappedKey = "5018BD5_88") {
 	Send, {Enter}
 }
 else if (wrappedKey = "5018BD5_90") {
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password_2.bat
+	Run, D:\Repositories\git-macros-lua-ahk\decrypt_password_2.bat
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
@@ -139,14 +139,14 @@ else if (wrappedKey = "29B40438_13" or wrappedKey = "5018BD5_83") {
 	sleep, 2500
 	Send, {Shift Down}{Tab}{Shift Up}{Space}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password_3.bat
+	Run, D:\Repositories\git-macros-lua-ahk\decrypt_password_3.bat
 	sleep, 500
 	FileRead, gid, D:\temp\pass.txt
 	Send, %gid%
 	
 	Send, {Tab}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password_4.bat
+	Run, D:\Repositories\git-macros-lua-ahk\decrypt_password_4.bat
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
