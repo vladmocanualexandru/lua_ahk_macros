@@ -9,13 +9,14 @@ with open(encryptedPasswordsPath) as f:
     for line in f.readlines():
         encryptedPasswords.append(line.strip())
 
-with open('E:/key.txt') as f:
+keyFile = sys.argv[2]
+with open(keyFile) as f:
     lines = f.readlines()
     key = lines[0]
 
 fernetKey = Fernet(base64.b64encode(key.encode('ascii')))
 
-passwordIndex = int(sys.argv[2])
+passwordIndex = int(sys.argv[3])
 decryptedPassword = fernetKey.decrypt(encryptedPasswords[passwordIndex].encode()).decode()
 
 with open('D:/Temp/pass.txt', 'w') as f:
