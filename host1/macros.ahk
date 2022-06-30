@@ -62,7 +62,7 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 110347CD_76=%110347CD_68%                                                                                       ; Git command - check status
 110347CD_70=git add .{Enter}                                                                                    ; Git command - add all
 110347CD_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
-110347CD_71=git commit -m ""{Left}                                                                              ; Git command - commit with message
+110347CD_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 110347CD_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
 110347CD_52={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
 110347CD_48=%110347CD_52%                                                                                       ; Paint.net - crop
