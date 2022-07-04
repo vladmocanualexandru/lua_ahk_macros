@@ -16,13 +16,16 @@ sleep, 500
 Send, {Control Down}v{Control Up}
 return
 
-^+`::                                        ; Open git bash
-Run, D:\Repositories\git-bash.lnk
+Pause::                                        ; Open file in notepad++
+Clipboard =
+Send ^c
+ClipWait
+Run notepad++ "%clipboard%"
 return
 
-Pause::                                      ; Open git bash
-Run, D:\Repositories\git-bash.lnk
-return
+; Pause::                                      ; Open git bash
+; Run, D:\Repositories\git-bash.lnk
+; return
 
 ; ================================================== LUA KEYCODE ENTRYPOINT ===========================================================================================================================
 F24::
@@ -55,21 +58,17 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 110347CD_65={Control Down}]{Control Up}                                                                         ; Affinity Designer - move layer up
 110347CD_90={Control Down}[{Control Up}                                                                         ; Affinity Designer - move layer down
 110347CD_66={Control Down}{Shift Down}[{Shift Up}{Control Up}                                                   ; Affinity Designer - move layer to bottom
-110347CD_82=git fetch{Enter}                                                                                    ; Git command - fetch
-110347CD_80=git pull{Enter}                                                                                     ; Git command - pull
-110347CD_219=git push{Enter}                                                                                    ; Git command - push
-110347CD_68=git status{Enter}                                                                                   ; Git command - check status
-110347CD_76=%110347CD_68%                                                                                       ; Git command - check status
+110347CD_89=git fetch{Enter}                                                                                    ; Git command - fetch
+110347CD_221=git pull{Enter}                                                                                    ; Git command - pull
+110347CD_220=git push{Enter}                                                                                    ; Git command - push
+110347CD_84=git status{Enter}                                                                                   ; Git command - check status
 110347CD_70=git add .{Enter}                                                                                    ; Git command - add all
 110347CD_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
 110347CD_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 110347CD_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
 110347CD_52={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
-110347CD_48=%110347CD_52%                                                                                       ; Paint.net - crop
-110347CD_53={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}33{Enter}                                   ; Paint.net - resize to 33%
 110347CD_189={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}  ; Paint.net - resize canvas to 200%
-110347CD_54={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                   ; Paint.net - resize to 50%
-110347CD_187={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}1000{Enter} ; Paint.net - resize canvas to 1000%
+110347CD_53={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                   ; Paint.net - resize to 50%
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
@@ -104,7 +103,10 @@ else if (wrappedKey = "110347CD_88") {                                         ;
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_72") {                                         ; Open HR tool #1
+else if (wrappedKey = "110347CD_82") {                                         ; Git bash
+	Run, D:\Repositories\git-bash.lnk
+}
+else if (wrappedKey = "110347CD_68") {                                         ; Open HR tool #1
 	Run, msedge
 	
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
@@ -131,7 +133,7 @@ else if (wrappedKey = "110347CD_72") {                                         ;
 	Send, %decryptedPassword%	
 	Send, {Enter}
 } 
-else if (wrappedKey = "110347CD_220") {                                         ; Open HR tool #2
+else if (wrappedKey = "110347CD_76") {                                         ; Open HR tool #2
 	Run, msedge
 
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
@@ -152,11 +154,11 @@ else if (wrappedKey = "110347CD_220") {                                         
 	Send, %decryptedPassword%	
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_221") {                                         ; Send timestamp
+else if (wrappedKey = "110347CD_187") {                                         ; Send timestamp
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "110347CD_89") {                                          ; Open latest screenshot
+else if (wrappedKey = "110347CD_54") {                                          ; Open latest screenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 } 
 
