@@ -33,26 +33,27 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 
 ; ================================================== SIMPLE MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
-; 5018BD5_54={Media_Prev}                                                                                         ; Media keys - previous
-; 5018BD5_53={Media_Next}                                                                                         ; Media keys - next
-; 5018BD5_52={Media_Play_Pause}                                                                                   ; Media keys - play/pause
-; 5018BD5_57={Volume_Down}{Volume_Down}                                                                           ; Media keys - volume down (fast)
-; 5018BD5_56={Volume_Up}{Volume_Up}                                                                               ; Media keys - volume up (fast)
-; 5018BD5_55={Volume_Mute}                                                                                        ; Media keys - toggle mute
-5018BD5_54={Down}                                                                                         ; Media keys - previous
-5018BD5_53={Up}                                                                                         ; Media keys - next
-5018BD5_57={Shift Down}{Down}{Shift Up}                                                                           ; Media keys - volume down (fast)
-5018BD5_56={Shift Down}{Up}{Shift Up}                                                                               ; Media keys - volume up (fast)
+5018BD5_54={Down}                                                                                               ; Media keys - previous
+5018BD5_53={Up}                                                                                                 ; Media keys - next
+5018BD5_57={Shift Down}{Down}{Shift Up}                                                                         ; Media keys - volume down (fast)
+5018BD5_56={Shift Down}{Up}{Shift Up}                                                                           ; Media keys - volume up (fast)
+5018BD5_49={Control Down}{Shift Down}]{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to top
+5018BD5_81={Control Down}]{Control Up}                                                                          ; Affinity Designer - move layer up
+5018BD5_65={Control Down}[{Control Up}                                                                          ; Affinity Designer - move layer down
+5018BD5_90={Control Down}{Shift Down}[{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to bottom
+5018BD5_50={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}33{Enter}                                    ; Paint.net - resize to 33%
+5018BD5_51={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                    ; Paint.net - resize to 50%
+5018BD5_87={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}    ; Paint.net - resize canvas to 200%
+5018BD5_69={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}1000{Enter}   ; Paint.net - resize canvas to 1000%
 
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 
-110347CD_48={Media_Prev}                                                                                         ; Media keys - previous
-110347CD_187={Media_Next}                                                                                         ; Media keys - next
-110347CD_189={Media_Play_Pause}                                                                                   ; Media keys - play/pause
-110347CD_52={Volume_Down}{Volume_Down}                                                                           ; Media keys - volume down (fast)
-110347CD_54={Volume_Up}{Volume_Up}                                                                               ; Media keys - volume up (fast)
-110347CD_53={Volume_Mute}                                                                                        ; Media keys - toggle mute
-
+110347CD_48={Media_Prev}                                                                                        ; Media keys - previous
+110347CD_187={Media_Next}                                                                                       ; Media keys - next
+110347CD_189={Media_Play_Pause}                                                                                 ; Media keys - play/pause
+110347CD_52={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
+110347CD_54={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
+110347CD_53={Volume_Mute}                                                                                       ; Media keys - toggle mute
 110347CD_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
 110347CD_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
 110347CD_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
@@ -67,10 +68,6 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 110347CD_79={Alt Down}l{Alt Up}t{Down 1}{Enter}                                                                 ; Affinity Designer - rotate right
 110347CD_83={Alt Down}l{Alt Up}m{Down 5}{Enter}                                                                 ; Affinity Designer - align bottom
 110347CD_75={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
-110347CD_74={Control Down}{Shift Down}]{Shift Up}{Control Up}                                                   ; Affinity Designer - move layer to top
-110347CD_65={Control Down}]{Control Up}                                                                         ; Affinity Designer - move layer up
-110347CD_90={Control Down}[{Control Up}                                                                         ; Affinity Designer - move layer down
-110347CD_66={Control Down}{Shift Down}[{Shift Up}{Control Up}                                                   ; Affinity Designer - move layer to bottom
 110347CD_89=git fetch{Enter}                                                                                    ; Git command - fetch
 110347CD_221=git pull{Enter}                                                                                    ; Git command - pull
 110347CD_220=git push{Enter}                                                                                    ; Git command - push
@@ -80,8 +77,6 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 110347CD_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 110347CD_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
 110347CD_65={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
-; 110347CD_189={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}  ; Paint.net - resize canvas to 200%
-; 110347CD_53={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                   ; Paint.net - resize to 50%
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
