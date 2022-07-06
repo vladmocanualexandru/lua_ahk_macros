@@ -45,6 +45,14 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 5018BD5_56={Shift Down}{Up}{Shift Up}                                                                               ; Media keys - volume up (fast)
 
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
+
+110347CD_48={Media_Prev}                                                                                         ; Media keys - previous
+110347CD_187={Media_Next}                                                                                         ; Media keys - next
+110347CD_189={Media_Play_Pause}                                                                                   ; Media keys - play/pause
+110347CD_52={Volume_Down}{Volume_Down}                                                                           ; Media keys - volume down (fast)
+110347CD_54={Volume_Up}{Volume_Up}                                                                               ; Media keys - volume up (fast)
+110347CD_53={Volume_Mute}                                                                                        ; Media keys - toggle mute
+
 110347CD_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
 110347CD_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
 110347CD_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
@@ -71,9 +79,9 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 110347CD_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
 110347CD_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 110347CD_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
-110347CD_52={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
-110347CD_189={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}  ; Paint.net - resize canvas to 200%
-110347CD_53={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                   ; Paint.net - resize to 50%
+110347CD_65={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
+; 110347CD_189={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}  ; Paint.net - resize canvas to 200%
+; 110347CD_53={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                   ; Paint.net - resize to 50%
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
@@ -159,11 +167,11 @@ else if (wrappedKey = "110347CD_76") {                                         ;
 	Send, %decryptedPassword%	
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_187") {                                         ; Send timestamp
+else if (wrappedKey = "110347CD_66") {                                         ; Send timestamp
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "110347CD_54") {                                          ; Open latest screenshot
+else if (wrappedKey = "110347CD_90") {                                          ; Open latest screenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 } 
 
