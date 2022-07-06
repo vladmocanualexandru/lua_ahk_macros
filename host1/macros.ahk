@@ -33,12 +33,17 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 
 ; ================================================== SIMPLE MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
-5018BD5_54={Media_Prev}                                                                                         ; Media keys - previous
-5018BD5_53={Media_Next}                                                                                         ; Media keys - next
-5018BD5_52={Media_Play_Pause}                                                                                   ; Media keys - play/pause
-5018BD5_57={Volume_Down}{Volume_Down}                                                                           ; Media keys - volume down (fast)
-5018BD5_56={Volume_Up}{Volume_Up}                                                                               ; Media keys - volume up (fast)
-5018BD5_55={Volume_Mute}                                                                                        ; Media keys - toggle mute
+; 5018BD5_54={Media_Prev}                                                                                         ; Media keys - previous
+; 5018BD5_53={Media_Next}                                                                                         ; Media keys - next
+; 5018BD5_52={Media_Play_Pause}                                                                                   ; Media keys - play/pause
+; 5018BD5_57={Volume_Down}{Volume_Down}                                                                           ; Media keys - volume down (fast)
+; 5018BD5_56={Volume_Up}{Volume_Up}                                                                               ; Media keys - volume up (fast)
+; 5018BD5_55={Volume_Mute}                                                                                        ; Media keys - toggle mute
+5018BD5_54={Down}                                                                                         ; Media keys - previous
+5018BD5_53={Up}                                                                                         ; Media keys - next
+5018BD5_57={Shift Down}{Down}{Shift Up}                                                                           ; Media keys - volume down (fast)
+5018BD5_56={Shift Down}{Up}{Shift Up}                                                                               ; Media keys - volume up (fast)
+
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 110347CD_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
 110347CD_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
