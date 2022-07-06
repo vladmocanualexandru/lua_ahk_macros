@@ -1,2 +1,4 @@
 /venv
 local_key.txt
+remote_key.txt
+encrypted_passwords.txt
