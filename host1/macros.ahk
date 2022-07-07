@@ -87,7 +87,7 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 ; 	Run, D:\Repositories\git_pc_stats\shutdown_raspi.bat
 ; } 
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
-if (wrappedKey = "110347CD_86") {                                              ; Password macro index 0
+if (wrappedKey = "110347CD_67") {                                              ; Password macro index 0
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -95,7 +95,7 @@ if (wrappedKey = "110347CD_86") {                                              ;
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_67") {                                         ; Password macro index 1
+else if (wrappedKey = "110347CD_88") {                                         ; Password macro index 1
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -103,7 +103,7 @@ else if (wrappedKey = "110347CD_67") {                                         ;
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_88") {                                         ; Password macro index 2
+else if (wrappedKey = "110347CD_90") {                                         ; Password macro index 2
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -117,7 +117,7 @@ else if (wrappedKey = "110347CD_82") {                                         ;
 else if (wrappedKey = "110347CD_68") {                                         ; Open HR tool #1
 	Run, msedge
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
 	sleep, 500
 	FileRead, url, D:\temp\pass.txt
 
@@ -127,14 +127,14 @@ else if (wrappedKey = "110347CD_68") {                                         ;
 	sleep, 2500
 	Send, {Shift Down}{Tab}{Shift Up}{Space}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
 	sleep, 500
 	FileRead, gid, D:\temp\pass.txt
 	Send, %gid%
 	
 	Send, {Tab}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
@@ -153,7 +153,7 @@ else if (wrappedKey = "110347CD_76") {                                         ;
 
 	sleep, 2500
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
 	sleep, 500
 
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -162,11 +162,27 @@ else if (wrappedKey = "110347CD_76") {                                         ;
 	Send, %decryptedPassword%	
 	Send, {Enter}
 }
-else if (wrappedKey = "110347CD_66") {                                         ; Send timestamp
+else if (wrappedKey = "110347CD_78") {                                         ; Password macro index 8
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 8
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
+	FileDelete, D:\temp\pass.txt
+	Send, %decryptedPassword%
+	Send, {Enter}
+}
+else if (wrappedKey = "110347CD_66") {                                         ; Password macro index 9
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 9
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
+	FileDelete, D:\temp\pass.txt
+	Send, %decryptedPassword%
+	Send, {Enter}
+}
+else if (wrappedKey = "110347CD_188") {                                         ; Send timestamp
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "110347CD_90") {                                          ; Open latest screenshot
+else if (wrappedKey = "110347CD_86") {                                          ; Open latest screenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 } 
 
