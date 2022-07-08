@@ -115,11 +115,21 @@ else if (wrappedKey = "110347CD_82") {                                         ;
 	Run, D:\Repositories\git-bash.lnk
 }
 else if (wrappedKey = "110347CD_68") {                                         ; Open HR tool #1
-	Run, msedge
-	
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
 	sleep, 500
 	FileRead, url, D:\temp\pass.txt
+	
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
+	sleep, 500
+	FileRead, gid, D:\temp\pass.txt
+	
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
+
+	FileDelete, D:\temp\pass.txt
+
+	Run, msedge
 
 	sleep, 2000
 	Send, %url%{Enter}
@@ -127,38 +137,31 @@ else if (wrappedKey = "110347CD_68") {                                         ;
 	sleep, 2500
 	Send, {Shift Down}{Tab}{Shift Up}{Space}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
-	sleep, 500
-	FileRead, gid, D:\temp\pass.txt
-	Send, %gid%
-	
+	Send, %gid%	
 	Send, {Tab}
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
-	sleep, 500
-	FileRead, decryptedPassword, D:\temp\pass.txt
-	FileDelete, D:\temp\pass.txt
 	Send, %decryptedPassword%	
 	Send, {Enter}
 } 
 else if (wrappedKey = "110347CD_76") {                                         ; Open HR tool #2
-	Run, msedge
 
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
 	sleep, 500
 	FileRead, url, D:\temp\pass.txt
 
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
+	
+	FileDelete, D:\temp\pass.txt
+
+	Run, msedge
+	
 	sleep, 2000
 	Send, %url%{Enter}
 
 	sleep, 2500
 	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
-	sleep, 500
-
-	FileRead, decryptedPassword, D:\temp\pass.txt
-	FileDelete, D:\temp\pass.txt
-
 	Send, %decryptedPassword%	
 	Send, {Enter}
 }
