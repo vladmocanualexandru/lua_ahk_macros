@@ -118,6 +118,10 @@ else if (wrappedKey = "110347CD_68") {                                         ;
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
 	sleep, 500
 	FileRead, url, D:\temp\pass.txt
+
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
+	sleep, 500
+	FileRead, url, D:\temp\pass.txt
 	
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
 	sleep, 500
@@ -144,6 +148,10 @@ else if (wrappedKey = "110347CD_68") {                                         ;
 	Send, {Enter}
 } 
 else if (wrappedKey = "110347CD_76") {                                         ; Open HR tool #2
+
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
+	sleep, 500
+	FileRead, url, D:\temp\pass.txt
 
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
 	sleep, 500
