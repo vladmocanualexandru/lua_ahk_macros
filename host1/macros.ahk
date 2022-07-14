@@ -33,18 +33,18 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 
 ; ================================================== SIMPLE MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x3 knobs macropad (HOME) ----------------------------------------------------------------------------------------------------
-5018BD5_54={Down}                                                                                               ; Media keys - previous
-5018BD5_53={Up}                                                                                                 ; Media keys - next
-5018BD5_57={Shift Down}{Down}{Shift Up}                                                                         ; Media keys - volume down (fast)
-5018BD5_56={Shift Down}{Up}{Shift Up}                                                                           ; Media keys - volume up (fast)
-5018BD5_49={Control Down}{Shift Down}]{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to top
-5018BD5_81={Control Down}]{Control Up}                                                                          ; Affinity Designer - move layer up
-5018BD5_65={Control Down}[{Control Up}                                                                          ; Affinity Designer - move layer down
-5018BD5_90={Control Down}{Shift Down}[{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to bottom
-5018BD5_50={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}33{Enter}                                    ; Paint.net - resize to 33%
-5018BD5_51={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                    ; Paint.net - resize to 50%
+5018BD5_57={Down}                                                                                               ; Affinity Designer - less by 1
+5018BD5_56={Up}                                                                                                 ; Affinity Designer - more by 1
+5018BD5_54={Shift Down}{Down}{Shift Up}                                                                         ; Affinity Designer - less by 10
+5018BD5_53={Shift Down}{Up}{Shift Up}                                                                           ; Affinity Designer - more by 10
+5018BD5_67={Control Down}{Shift Down}]{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to top
+5018BD5_68={Control Down}]{Control Up}                                                                          ; Affinity Designer - move layer up
+5018BD5_69={Control Down}[{Control Up}                                                                          ; Affinity Designer - move layer down
+5018BD5_51={Control Down}{Shift Down}[{Shift Up}{Control Up}                                                    ; Affinity Designer - move layer to bottom
+5018BD5_88={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}33{Enter}                                    ; Paint.net - resize to 33%
+5018BD5_83={Control Down}r{Control Up}{Shift Down}{Tab 3}{Shift Up}50{Enter}                                    ; Paint.net - resize to 50%
 5018BD5_87={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}200{Enter}    ; Paint.net - resize canvas to 200%
-5018BD5_69={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}1000{Enter}   ; Paint.net - resize canvas to 1000%
+5018BD5_50={Control Down}{Shift Down}r{Shift Up}{Control Up}{Tab 7}m{Shift Down}{Tab 10}{Shift Up}1000{Enter}   ; Paint.net - resize canvas to 1000%
 
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 
