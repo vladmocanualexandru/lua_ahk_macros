@@ -133,9 +133,6 @@ else if (wrappedKey = "110347CD_68") {                                         ;
 
 	FileDelete, D:\temp\pass.txt
 
-	Run, msedge
-
-	sleep, 2000
 	Send, %url%{Enter}
 	
 	sleep, 2500
@@ -163,9 +160,6 @@ else if (wrappedKey = "110347CD_76") {                                         ;
 	
 	FileDelete, D:\temp\pass.txt
 
-	Run, msedge
-	
-	sleep, 2000
 	Send, %url%{Enter}
 
 	sleep, 2500
