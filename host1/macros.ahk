@@ -8,12 +8,9 @@ SendMode Input
 
 ; ================================================== UNIVERSAL MACROS ===========================================================================================================================
 ^+v::                                        ; Paste without formatting
-Run, notepad
-sleep, 500
-Send, {Control Down}vac{Control Up}
-Send, {Alt Down}{F4}{Alt Up}n
-sleep, 500
-Send, {Control Down}v{Control Up}
+Clipboard=%Clipboard%   ; will remove formatting
+Sleep, 100   ; wait for Clipboard to update
+Send ^v
 return
 
 Pause::                                        ; Open file in notepad++
