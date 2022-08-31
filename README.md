@@ -45,16 +45,16 @@ Steps to use passwords in macros:
 2. generate a 32 character remote key (it's recommended to back it up somewhere safe, like within a password manager)
 3. encrypt all the passwords you wish to use in macros and save all of them in a file
 4. encrypt the remote key using the local key and store it on a remote location, like a usb drive
-5. create a batch file that makes a similar call
+5. create a batch file that makes a similar call to
 ```
-python decrypt_password.py <PATH TO ENCRYPTED PASSWORDS> <PATH TO LOCAL KEY> <PATH TO ENCRYPTED REMOTE KEY> <INDEX OF ENCRYPTED PASSWORD>
+python decrypt_password.py <PATH TO ENCRYPTED PASSWORDS> <INDEX OF ENCRYPTED PASSWORD> <PATH TO LOCAL KEY> <PATH TO ENCRYPTED REMOTE KEY #1> <PATH TO ENCRYPTED REMOTE KEY #2> <PATH TO ENCRYPTED REMOTE KEY #3>... 
 ```
-6. the decryption script will use the local key, to decrypt the remote key, and then use the decrypted remote key to decrypt the desired password
+6. the decryption script will use the local key, to decrypt the first remote key it finds out of the provided possible locations, and then use the decrypted remote key to decrypt the desired password
 7. WARNING - the decryption script will save the decrypted password to some location on your local filesystems, in order to be parsed by AHK - THIS FILE MUST BE DELETED BY AHK
-8. in AHK, call the decryption script, then read the password from the temporary local filesystem file, DELETE THE TEMPORARY FILE, then send the password as keypresses. Example oh AHK config:
+8. in AHK, call the decryption script, then read the password from the temporary local filesystem file, DELETE THE TEMPORARY FILE, then send the password as keypresses. Example of AHK config:
 ```
 if (wrappedKey = "DEVICE1_ID_67") {
-	Run, D:\Macros\decrypt_password_0.bat
+	Run, D:\Macros\decrypt_password.bat 0
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
@@ -62,5 +62,5 @@ if (wrappedKey = "DEVICE1_ID_67") {
 	Send, {Enter}
 }
 ```
-NOTE: Text that is about to be encrypted, can containany character but some might create weird behavior upon decrypting, for example double "!" characters will be ignored. DOUBLE TRIPLE CHECK your final macro result and if needed, change the password so that it contains safe characters.
+NOTE: Text that is about to be encrypted, can contain any character but some might create weird behavior upon decrypting, for example double "!" characters will be ignored. DOUBLE TRIPLE CHECK your final macro result and if needed, change the password so that it contains safe characters.
 
