@@ -13,11 +13,15 @@ Sleep, 100   ; wait for Clipboard to update
 Send ^v
 return
 
-Pause::                                        ; Open file in notepad++
-Clipboard =
-Send ^c
-ClipWait
-Run notepad++ "%clipboard%"
+; Pause::                                        ; Open file in notepad++
+; Clipboard =
+; Send ^c
+; ClipWait
+; Run notepad++ "%clipboard%"
+; return
+
+Pause::                                        ; send basic Linux browse command
+Send, ls -ahl{Space}
 return
 
 ; Pause::                                      ; Open git bash
