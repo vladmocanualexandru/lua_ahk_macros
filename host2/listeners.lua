@@ -13,7 +13,7 @@ writeKeyCodeToFile = function (key)
       lmc_send_keys('{F24}')
 end
 
-print('Initializing 4x6 macropad (HOME)...')
+print('Initializing 4x6 macropad ...')
 lmc_device_set_name('113CB3CC_device', '113CB3CC');
 lmc_set_handler('113CB3CC_device',function(button, direction)
   if (direction == 0) then return end
