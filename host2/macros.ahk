@@ -33,20 +33,20 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 113CB3CC_52={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
 113CB3CC_54={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
 113CB3CC_53={Volume_Mute}                                                                                       ; Media keys - toggle mute
-113CB3CC_81={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
-113CB3CC_85={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
-113CB3CC_87={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
-113CB3CC_73={Alt Down}l{Alt Up}t{Down 2}{Enter}                                                                 ; Affinity Designer - flip horizontal
-113CB3CC_69={Alt Down}l{Alt Up}m{Down 7}{Enter}                                                                 ; Affinity Designer - space vertically
-113CB3CC_79={Alt Down}l{Alt Up}m{Down 9}{Enter}                                                                 ; Affinity Designer - distribute vertically
-113CB3CC_65={Alt Down}l{Alt Up}m{Enter}                                                                         ; Affinity Designer - align left
-113CB3CC_74={Alt Down}l{Alt Up}t{Enter}                                                                         ; Affinity Designer - rotate left
-113CB3CC_83={Alt Down}l{Alt Up}m{Down 1}{Enter}                                                                 ; Affinity Designer - align center
-113CB3CC_75={Alt Down}l{Alt Up}m{Down 4}{Enter}                                                                 ; Affinity Designer - align middle
-113CB3CC_68={Alt Down}l{Alt Up}m{Down 2}{Enter}                                                                 ; Affinity Designer - align right
-113CB3CC_76={Alt Down}l{Alt Up}t{Down 1}{Enter}                                                                 ; Affinity Designer - rotate right
-113CB3CC_88={Alt Down}l{Alt Up}m{Down 5}{Enter}                                                                 ; Affinity Designer - align bottom
-113CB3CC_78={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
+113CB3CC_65={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
+113CB3CC_74={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
+113CB3CC_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
+113CB3CC_56={Alt Down}l{Alt Up}t{Down 2}{Enter}                                                                 ; Affinity Designer - flip horizontal
+113CB3CC_68={Alt Down}l{Alt Up}m{Down 7}{Enter}                                                                 ; Affinity Designer - space vertically
+113CB3CC_76={Alt Down}l{Alt Up}m{Down 9}{Enter}                                                                 ; Affinity Designer - distribute vertically
+113CB3CC_81={Alt Down}l{Alt Up}m{Enter}                                                                         ; Affinity Designer - align left
+113CB3CC_85={Alt Down}l{Alt Up}t{Enter}                                                                         ; Affinity Designer - rotate left
+113CB3CC_87={Alt Down}l{Alt Up}m{Down 1}{Enter}                                                                 ; Affinity Designer - align center
+113CB3CC_73={Alt Down}l{Alt Up}m{Down 4}{Enter}                                                                 ; Affinity Designer - align middle
+113CB3CC_69={Alt Down}l{Alt Up}m{Down 2}{Enter}                                                                 ; Affinity Designer - align right
+113CB3CC_79={Alt Down}l{Alt Up}t{Down 1}{Enter}                                                                 ; Affinity Designer - rotate right
+113CB3CC_83={Alt Down}l{Alt Up}m{Down 5}{Enter}                                                                 ; Affinity Designer - align bottom
+113CB3CC_75={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
 113CB3CC_89=git fetch{Enter}                                                                                    ; Git command - fetch
 113CB3CC_221=git pull{Enter}                                                                                    ; Git command - pull
 113CB3CC_220=git push{Enter}                                                                                    ; Git command - push
@@ -55,7 +55,7 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 113CB3CC_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
 113CB3CC_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 113CB3CC_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
-113CB3CC_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
+113CB3CC_88={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
@@ -94,11 +94,11 @@ else if (wrappedKey = "113CB3CC_77") {                                         ;
 else if (wrappedKey = "113CB3CC_82") {                                         ; Git bash
 	Run, D:\Repositories\git-bash.lnk
 }
-else if (wrappedKey = "113CB3CC_55") {                                         ; Send timestamp
+else if (wrappedKey = "113CB3CC_66") {                                         ; Send timestamp
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "113CB3CC_49") {                                          ; Open latest screenshot
+else if (wrappedKey = "113CB3CC_90") {                                          ; Open latest screenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
 } 
 else if (wrappedKey = "113CB3CC_51") {                                          ; Start PC Stats UI
