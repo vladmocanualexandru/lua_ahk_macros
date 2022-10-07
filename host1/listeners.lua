@@ -14,10 +14,10 @@ writeKeyCodeToFile = function (key)
 end
 
 print('Initializing 4x6 macropad (HOME)...')
-lmc_device_set_name('110347CD_device', '110347CD');
-lmc_set_handler('110347CD_device',function(button, direction)
+lmc_device_set_name('4504C20_device', '4504C20');
+lmc_set_handler('4504C20_device',function(button, direction)
   if (direction == 0) then return end
-  local code =  '110347CD_' .. button
+  local code =  '4504C20_' .. button
   print(code)
   writeKeyCodeToFile(code);
 end)
