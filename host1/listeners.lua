@@ -24,10 +24,10 @@ end)
 print('Done!')
 
 print('Initializing 4x6 macropad (WORK)...')
-lmc_device_set_name('2E5C4E71_device', '2E5C4E71');
-lmc_set_handler('2E5C4E71_device',function(button, direction)
+lmc_device_set_name('20222B1_device', '20222B1');
+lmc_set_handler('20222B1_device',function(button, direction)
   if (direction == 0) then return end
-  local code =  '2E5C4E71_' .. button
+  local code =  '20222B1_' .. button
   print(code)
   writeKeyCodeToFile(code);
 end)
