@@ -101,12 +101,6 @@ else if (wrappedKey = "113CB3CC_66") {                                         ;
 else if (wrappedKey = "113CB3CC_90") {                                          ; Open latest screenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
 } 
-else if (wrappedKey = "113CB3CC_51") {                                          ; Start PC Stats UI
-	Run,  D:\Repositories\git-pc-stats\start_raspi.bat
-} 
-else if (wrappedKey = "113CB3CC_57") {                                          ; Shutdown PC Stats Rpi
-	Run,  D:\Repositories\git-pc-stats\shutdown_raspi.bat
-} 
 
 ; ================================================== HANDLE SIMPLE MACRO ===========================================================================================================================
 else {
