@@ -60,39 +60,39 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 
 ; -------------------------------------------------- 4x6 macropad (WORK) ----------------------------------------------------------------------------------------------------
 
-20222B1_48={Media_Prev}                                                                                        ; Media keys - previous
-20222B1_187={Media_Next}                                                                                       ; Media keys - next
-20222B1_189={Media_Play_Pause}                                                                                 ; Media keys - play/pause
-20222B1_52={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
-20222B1_54={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
-20222B1_53={Volume_Mute}                                                                                       ; Media keys - toggle mute
-20222B1_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
-20222B1_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
-20222B1_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
-20222B1_56={Alt Down}l{Alt Up}t{Down 2}{Enter}                                                                 ; Affinity Designer - flip horizontal
-20222B1_51={Alt Down}l{Alt Up}m{Down 7}{Enter}                                                                 ; Affinity Designer - space vertically
-20222B1_57={Alt Down}l{Alt Up}m{Down 9}{Enter}                                                                 ; Affinity Designer - distribute vertically
-20222B1_81={Alt Down}l{Alt Up}m{Enter}                                                                         ; Affinity Designer - align left
-20222B1_85={Alt Down}l{Alt Up}t{Enter}                                                                         ; Affinity Designer - rotate left
-20222B1_87={Alt Down}l{Alt Up}m{Down 1}{Enter}                                                                 ; Affinity Designer - align center
-20222B1_73={Alt Down}l{Alt Up}m{Down 4}{Enter}                                                                 ; Affinity Designer - align middle
-20222B1_69={Alt Down}l{Alt Up}m{Down 2}{Enter}                                                                 ; Affinity Designer - align right
-20222B1_79={Alt Down}l{Alt Up}t{Down 1}{Enter}                                                                 ; Affinity Designer - rotate right
-20222B1_83={Alt Down}l{Alt Up}m{Down 5}{Enter}                                                                 ; Affinity Designer - align bottom
-20222B1_75={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
-20222B1_89=git fetch{Enter}                                                                                    ; Git command - fetch
-20222B1_221=git pull{Enter}                                                                                    ; Git command - pull
-20222B1_220=git push{Enter}                                                                                    ; Git command - push
-20222B1_84=git status{Enter}                                                                                   ; Git command - check status
-20222B1_70=git add .{Enter}                                                                                    ; Git command - add all
-20222B1_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
-20222B1_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
-20222B1_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
-20222B1_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
+20C54725_48={Media_Prev}                                                                                        ; Media keys - previous
+20C54725_187={Media_Next}                                                                                       ; Media keys - next
+20C54725_189={Media_Play_Pause}                                                                                 ; Media keys - play/pause
+20C54725_52={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
+20C54725_54={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
+20C54725_53={Volume_Mute}                                                                                       ; Media keys - toggle mute
+20C54725_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
+20C54725_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
+20C54725_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
+20C54725_56={Alt Down}l{Alt Up}t{Down 2}{Enter}                                                                 ; Affinity Designer - flip horizontal
+20C54725_51={Alt Down}l{Alt Up}m{Down 7}{Enter}                                                                 ; Affinity Designer - space vertically
+20C54725_57={Alt Down}l{Alt Up}m{Down 9}{Enter}                                                                 ; Affinity Designer - distribute vertically
+20C54725_81={Alt Down}l{Alt Up}m{Enter}                                                                         ; Affinity Designer - align left
+20C54725_85={Alt Down}l{Alt Up}t{Enter}                                                                         ; Affinity Designer - rotate left
+20C54725_87={Alt Down}l{Alt Up}m{Down 1}{Enter}                                                                 ; Affinity Designer - align center
+20C54725_73={Alt Down}l{Alt Up}m{Down 4}{Enter}                                                                 ; Affinity Designer - align middle
+20C54725_69={Alt Down}l{Alt Up}m{Down 2}{Enter}                                                                 ; Affinity Designer - align right
+20C54725_79={Alt Down}l{Alt Up}t{Down 1}{Enter}                                                                 ; Affinity Designer - rotate right
+20C54725_83={Alt Down}l{Alt Up}m{Down 5}{Enter}                                                                 ; Affinity Designer - align bottom
+20C54725_75={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
+20C54725_89=git fetch{Enter}                                                                                    ; Git command - fetch
+20C54725_221=git pull{Enter}                                                                                    ; Git command - pull
+20C54725_220=git push{Enter}                                                                                    ; Git command - push
+20C54725_84=git status{Enter}                                                                                   ; Git command - check status
+20C54725_70=git add .{Enter}                                                                                    ; Git command - add all
+20C54725_186=git reset{Enter}                                                                                   ; Git command - revert "add all"
+20C54725_71=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
+20C54725_222=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
+20C54725_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
-if (wrappedKey = "4504C20_86" or wrappedKey="20222B1_86") {                                              ; Password macro index 0
+if (wrappedKey = "4504C20_86" or wrappedKey="20C54725_86") {                                              ; Password macro index 0
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -100,7 +100,7 @@ if (wrappedKey = "4504C20_86" or wrappedKey="20222B1_86") {                     
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "4504C20_67" or wrappedKey="20222B1_67") {                                         ; Password macro index 1
+else if (wrappedKey = "4504C20_67" or wrappedKey="20C54725_67") {                                         ; Password macro index 1
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -108,7 +108,7 @@ else if (wrappedKey = "4504C20_67" or wrappedKey="20222B1_67") {                
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "4504C20_77" or wrappedKey="20222B1_77") {                                         ; Password macro index 2
+else if (wrappedKey = "4504C20_77" or wrappedKey="20C54725_77") {                                         ; Password macro index 2
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -116,63 +116,27 @@ else if (wrappedKey = "4504C20_77" or wrappedKey="20222B1_77") {                
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "4504C20_82" or wrappedKey="20222B1_82") {                                         ; Git bash
+else if (wrappedKey = "4504C20_82" or wrappedKey="20C54725_82") {                                         ; Git bash
 	Run, D:\Repositories\git-bash.lnk
 }
-else if (wrappedKey = "4504C20_68" or wrappedKey="20222B1_68") {                                         ; Open HR tool #1
+else if (wrappedKey = "4504C20_68" or wrappedKey="20C54725_68") {                                         ; Password macro index 3
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
-	sleep, 500
-	FileRead, url, D:\temp\pass.txt
-
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
-	sleep, 500
-	FileRead, url, D:\temp\pass.txt
-	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
-	sleep, 500
-	FileRead, gid, D:\temp\pass.txt
-	
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
-
 	FileDelete, D:\temp\pass.txt
-
-	Send, %url%{Enter}
-	
-	sleep, 2500
-	Send, {Shift Down}{Tab}{Shift Up}{Space}
-	
-	Send, %gid%	
-	Send, {Tab}
-	
-	Send, %decryptedPassword%	
+	Send, %decryptedPassword%
 	Send, {Enter}
 } 
-else if (wrappedKey = "4504C20_76" or wrappedKey="20222B1_76") {                                         ; Open HR tool #2
+else if (wrappedKey = "4504C20_76" or wrappedKey="20C54725_76") {                                         ; Password macro index 4
 
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
-	sleep, 500
-	FileRead, url, D:\temp\pass.txt
-
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 6
-	sleep, 500
-	FileRead, url, D:\temp\pass.txt
-
-	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 7
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
-	
 	FileDelete, D:\temp\pass.txt
-
-	Send, %url%{Enter}
-
-	sleep, 2500
-	
-	Send, %decryptedPassword%	
+	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "4504C20_188" or wrappedKey="20222B1_188") {                                         ; Password macro index 9
+else if (wrappedKey = "4504C20_188" or wrappedKey="20C54725_188") {                                         ; Password macro index 9
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 9
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -180,19 +144,19 @@ else if (wrappedKey = "4504C20_188" or wrappedKey="20222B1_188") {              
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "4504C20_88" or wrappedKey="20222B1_88") {                                         ; Send timestamp
+else if (wrappedKey = "4504C20_88" or wrappedKey="20C54725_88") {                                         ; Send timestamp
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "4504C20_65" or wrappedKey="20222B1_65") {                                          ; Open latest screenshot in Greenshot
+else if (wrappedKey = "4504C20_65" or wrappedKey="20C54725_65") {                                          ; Open latest screenshot in Greenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 } 
-else if (wrappedKey = "4504C20_74" or wrappedKey="20222B1_74") {                                          ; Open clipboard in paint.net
+else if (wrappedKey = "4504C20_74" or wrappedKey="20C54725_74") {                                          ; Open clipboard in paint.net
 	Run, PaintDotNet
 	sleep, 2000
 	Send, {CtrlDown}v{CtrlUp}
 }
-else if (wrappedKey = "4504C20_66" or wrappedKey="20222B1_66") {                                         ; Save current image to desktop as jpg90
+else if (wrappedKey = "4504C20_66" or wrappedKey="20C54725_66") {                                         ; Save current image to desktop as jpg90
 	Send, {Control Down}{Shift Down}s{Shift Up}{Control Up}{asc 0037}USERPROFILE{asc 0037}\Desktop\
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
