@@ -101,17 +101,19 @@ else if (wrappedKey = "113CB3CC_88") {                                         ;
 else if (wrappedKey = "113CB3CC_65") {                                          ; Open latest screenshot in Greenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
 } 
-else if (wrappedKey = "113CB3CC_74") {                                          ; Open clipboard in paint.net
-	Run, PaintDotNet
-	sleep, 2000
-	Send, {CtrlDown}v{CtrlUp}
-}
 else if (wrappedKey = "113CB3CC_66") {                                         ; Send timestamp
 	Send, {Control Down}{Shift Down}s{Shift Up}{Control Up}{asc 0037}USERPROFILE{asc 0037}\Desktop\
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 	Send, {Tab}pj{Enter}{Tab 4}90{Enter}
 } 
+else if (wrappedKey = "113CB3CC_80") {                                         ; Copy current fodler in clipboard, open powershell with admin rights
+	Send, {Shift Down}{Tab 3}{Shift Up}{Enter}
+	Send, {CtrlDown}c{CtrlUp}
+	Run, powershell -NoExit -Command "start-process PowerShell -verb runas"
+} 
+
+
 
 ; ================================================== HANDLE SIMPLE MACRO ===========================================================================================================================
 else {
