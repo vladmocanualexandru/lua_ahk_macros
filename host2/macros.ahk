@@ -28,7 +28,7 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 ; ================================================== SIMPLE MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 113CB3CC_78={Media_Prev}                                                                                        ; Media keys - previous
-113CB3CC_77={Media_Next}                                                                                       ; Media keys - next
+113CB3CC_77={Media_Next}                                                                                        ; Media keys - next
 113CB3CC_188={Media_Play_Pause}                                                                                 ; Media keys - play/pause
 113CB3CC_88={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
 113CB3CC_67={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
@@ -49,7 +49,7 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 113CB3CC_75={Alt Down}l{Alt Up}t{Down 3}{Enter}                                                                 ; Affinity Designer - flip vertical
 113CB3CC_54=git fetch{Enter}                                                                                    ; Git command - fetch
 113CB3CC_187=git pull{Enter}                                                                                    ; Git command - pull
-113CB3CC_89=git push{Enter}                                                                                    ; Git command - push
+113CB3CC_221=git push{Enter}                                                                                    ; Git command - push
 113CB3CC_53=git status{Enter}                                                                                   ; Git command - check status
 113CB3CC_82=git add .{Enter}                                                                                    ; Git command - add all
 113CB3CC_80=git reset{Enter}                                                                                    ; Git command - revert "add all"
@@ -83,7 +83,7 @@ else if (wrappedKey = "113CB3CC_220") {                                         
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
-else if (wrappedKey = "113CB3CC_222") {                                         ; Password macro index 2
+else if (wrappedKey = "113CB3CC_222") {                                         ; Password macro index 3
 	Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 3
 	sleep, 500
 	FileRead, decryptedPassword, D:\Temp\pass.txt
@@ -107,7 +107,7 @@ else if (wrappedKey = "113CB3CC_66") {                                         ;
 	SendInput %CurrentDateTime%
 	Send, {Tab}pj{Enter}{Tab 4}90{Enter}
 } 
-else if (wrappedKey = "113CB3CC_48") {                                         ; Copy current fodler in clipboard, open powershell with admin rights
+else if (wrappedKey = "113CB3CC_48") {                                         ; Copy current folder path in clipboard, open powershell with admin rights
 	Send, {Shift Down}{Tab 3}{Shift Up}{Enter}
 	Send, {CtrlDown}c{CtrlUp}
 	Run, powershell -NoExit -Command "start-process PowerShell -verb runas"
