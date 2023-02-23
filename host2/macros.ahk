@@ -56,6 +56,8 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 113CB3CC_84=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 113CB3CC_219=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
 113CB3CC_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
+113CB3CC_65={PrintScreen}                                                                                       ; PrintScreen
+
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
@@ -107,12 +109,6 @@ else if (wrappedKey = "113CB3CC_66") {                                         ;
 	SendInput %CurrentDateTime%
 	Send, {Tab}pj{Enter}{Tab 4}90{Enter}
 } 
-else if (wrappedKey = "113CB3CC_48") {                                         ; Copy current folder path in clipboard, open powershell with admin rights
-	Send, {Shift Down}{Tab 3}{Shift Up}{Enter}
-	Send, {CtrlDown}c{CtrlUp}
-	Run, powershell -NoExit -Command "start-process PowerShell -verb runas"
-} 
-
 
 
 ; ================================================== HANDLE SIMPLE MACRO ===========================================================================================================================

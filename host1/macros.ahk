@@ -29,11 +29,11 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 
 4504C20_78={Media_Prev}                                                                                       ; Media keys - previous
-4504C20_77={Media_Next}                                                                                       ; Media keys - next
-4504C20_188={Media_Play_Pause}                                                                                ; Media keys - play/pause
+4504C20_188={Media_Next}                                                                                       ; Media keys - next
+4504C20_77={Media_Play_Pause}                                                                                ; Media keys - play/pause
 4504C20_88={Volume_Down}{Volume_Down}                                                                         ; Media keys - volume down (fast)
-4504C20_67={Volume_Up}{Volume_Up}                                                                             ; Media keys - volume up (fast)
-4504C20_86={Volume_Mute}                                                                                      ; Media keys - toggle mute
+4504C20_86={Volume_Up}{Volume_Up}                                                                             ; Media keys - volume up (fast)
+4504C20_67={Volume_Mute}                                                                                      ; Media keys - toggle mute
 4504C20_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                ; Affinity Designer - space horizontally
 4504C20_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                ; Affinity Designer - distribute horizontally
 4504C20_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                ; Affinity Designer - align top
@@ -57,15 +57,16 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 4504C20_84=git commit -a -m ""{Left}                                                                          ; Git command - commit with message
 4504C20_219=git reset --soft HEAD~1{Enter}                                                                    ; Git command - revert all commits
 4504C20_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                  ; Paint.net - crop
+4504C20_65={PrintScreen}                                                                                      ; PrintScreen
 
 ; -------------------------------------------------- 4x6 macropad (WORK) ----------------------------------------------------------------------------------------------------
 
 20C54725_78={Media_Prev}                                                                                        ; Media keys - previous
-20C54725_77={Media_Next}                                                                                        ; Media keys - next
-20C54725_188={Media_Play_Pause}                                                                                 ; Media keys - play/pause
+20C54725_188={Media_Next}                                                                                        ; Media keys - next
+20C54725_77={Media_Play_Pause}                                                                                 ; Media keys - play/pause
 20C54725_88={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
-20C54725_67={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
-20C54725_86={Volume_Mute}                                                                                       ; Media keys - toggle mute
+20C54725_86={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
+20C54725_67={Volume_Mute}                                                                                       ; Media keys - toggle mute
 20C54725_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
 20C54725_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
 20C54725_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
@@ -89,10 +90,14 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 20C54725_84=git commit -a -m ""{Left}                                                                           ; Git command - commit with message
 20C54725_219=git reset --soft HEAD~1{Enter}                                                                     ; Git command - revert all commits
 20C54725_90={Control Down}{Shift Down}x{Shift Up}{Control Up}                                                   ; Paint.net - crop
+20C54725_65={PrintScreen}                                                                                       ; PrintScreen
 
 ; ================================================== COMPLEX MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 if (wrappedKey = "4504C20_72" or wrappedKey="20C54725_72") {                                              ; Password macro index 0
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -104,11 +109,17 @@ else if (wrappedKey = "4504C20_220" or wrappedKey="20C54725_220") {             
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
 else if (wrappedKey = "4504C20_71" or wrappedKey="20C54725_71") {                                         ; Password macro index 2
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -120,6 +131,9 @@ else if (wrappedKey = "4504C20_222" or wrappedKey="20C54725_222") {             
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
 	Send, %decryptedPassword%
 	Send, {Enter}
@@ -128,11 +142,17 @@ else if (wrappedKey = "4504C20_70" or wrappedKey="20C54725_70") {               
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	FileDelete, D:\temp\pass.txt
 	Send, %decryptedPassword%
 	Send, {Enter}
 }
 else if (wrappedKey = "4504C20_186" or wrappedKey="20C54725_186") {                                         ; Password macro index 5
+	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
+	sleep, 500
+	FileRead, decryptedPassword, D:\temp\pass.txt
 	Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
 	sleep, 500
 	FileRead, decryptedPassword, D:\temp\pass.txt
@@ -149,7 +169,7 @@ else if (wrappedKey = "4504C20_68" or wrappedKey="20C54725_68") {               
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "4504C20_65" or wrappedKey="20C54725_65") {                                          ; Open latest screenshot in Greenshot
+else if (wrappedKey = "4504C20_74" or wrappedKey="20C54725_74") {                                          ; Open latest screenshot in Greenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 } 
 else if (wrappedKey = "4504C20_66" or wrappedKey="20C54725_66") {                                         ; Save current image to desktop as jpg90
@@ -157,11 +177,6 @@ else if (wrappedKey = "4504C20_66" or wrappedKey="20C54725_66") {               
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 	Send, {Tab}pj{Enter}{Tab 4}90{Enter}
-} 
-else if (wrappedKey = "4504C20_48" or wrappedKey = "20C54725_48") {                                         ; Copy current folder path in clipboard, open powershell with admin rights
-	Send, {Shift Down}{Tab 3}{Shift Up}{Enter}
-	Send, {CtrlDown}c{CtrlUp}
-	Run, powershell -NoExit -Command "start-process PowerShell -verb runas"
 } 
 
 ; ================================================== HANDLE SIMPLE MACRO ===========================================================================================================================
