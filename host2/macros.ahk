@@ -28,11 +28,11 @@ FileRead, wrappedKey, D:\Temp\lua_keypress.txt
 ; ================================================== SIMPLE MACROS ===========================================================================================================================
 ; -------------------------------------------------- 4x6 macropad (HOME) ----------------------------------------------------------------------------------------------------
 113CB3CC_78={Media_Prev}                                                                                        ; Media keys - previous
-113CB3CC_77={Media_Next}                                                                                        ; Media keys - next
-113CB3CC_188={Media_Play_Pause}                                                                                 ; Media keys - play/pause
+113CB3CC_188={Media_Next}                                                                                        ; Media keys - next
+113CB3CC_77={Media_Play_Pause}                                                                                 ; Media keys - play/pause
 113CB3CC_88={Volume_Down}{Volume_Down}                                                                          ; Media keys - volume down (fast)
-113CB3CC_67={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
-113CB3CC_86={Volume_Mute}                                                                                       ; Media keys - toggle mute
+113CB3CC_86={Volume_Up}{Volume_Up}                                                                              ; Media keys - volume up (fast)
+113CB3CC_67={Volume_Mute}                                                                                       ; Media keys - toggle mute
 113CB3CC_49={Alt Down}l{Alt Up}m{Down 6}{Enter}                                                                 ; Affinity Designer - space horizontally
 113CB3CC_55={Alt Down}l{Alt Up}m{Down 8}{Enter}                                                                 ; Affinity Designer - distribute horizontally
 113CB3CC_50={Alt Down}l{Alt Up}m{Down 3}{Enter}                                                                 ; Affinity Designer - align top
@@ -100,7 +100,7 @@ else if (wrappedKey = "113CB3CC_68") {                                         ;
 	FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 	SendInput %CurrentDateTime%
 } 
-else if (wrappedKey = "113CB3CC_65") {                                          ; Open latest screenshot in Greenshot
+else if (wrappedKey = "113CB3CC_74") {                                          ; Open latest screenshot in Greenshot
 	Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
 } 
 else if (wrappedKey = "113CB3CC_66") {                                         ; From paint.net save as jpeg on desktop
