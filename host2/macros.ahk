@@ -100,6 +100,14 @@ Return
 Run, D:\Repositories\git-bash.lnk
 Return
 
+F23::
+Send, git fetch{Enter}
+Return
+
+>^F23::
+Send, git pull{Enter}
+Return
+
 NumpadDiv::
 Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
 Return
