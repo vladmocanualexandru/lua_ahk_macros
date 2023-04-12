@@ -12,56 +12,59 @@ Sleep, 100   ; wait for Clipboard to update
 Send ^v
 return
 
-F13::
+F22::
 Send, {Volume_Down}{Volume_Down}
 return
 
-F14::
+F23::
 Send, {Volume_Mute}
 return
 
-F15::
+F24::
 Send, {Volume_Up}{Volume_Up}
 return
 
->^F13::
+>^F22::
 Send, {Media_Prev}
 return
 
->^F14::
+>^F23::
 Send, {Media_Play_Pause}
 return
 
->^F15::
+>^F24::
 Send, {Media_Next}
 return
 
->+F16::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
+>+F15::
+Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 1
 sleep, 500
-FileRead, decryptedPassword, D:\temp\pass.txt
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
-sleep, 500
-FileRead, decryptedPassword, D:\temp\pass.txt
-FileDelete, D:\temp\pass.txt
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
 Send, %decryptedPassword%
 Send, {Enter}
-Return
+return
+
+>+>^F15::
+Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 3
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
+
+>+F16::
+Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 0
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
 
 >+>^F16::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
-sleep, 500
-FileRead, decryptedPassword, D:\temp\pass.txt
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
-sleep, 500
-FileRead, decryptedPassword, D:\temp\pass.txt
-FileDelete, D:\temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-Return
-
->+F17::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
+Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 2
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -69,66 +72,39 @@ Send, %decryptedPassword%
 Send, {Enter}
 return
 
->+>^F17::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
-
->+F18::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
-
->+>^F18::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
-
->^F19::
+>^F17::
 Send, git push{Enter}
 return
 
-F20::
+F18::
 Send, git commit -a -m ""{Left}
 return
 
->^F20::
+>^F18::
 Send, git reset --soft HEAD~1{Enter}
 return
 
-F21::
+F19::
 Send, git add . {Enter}
 Return
 
->^F21::
+>^F19::
 Send, git reset{Enter}
 return
 
-F22::
+F20::
 Send, git status{Enter}
 Return
 
->^F22::
+>^F20::
 Run, D:\Repositories\git-bash.lnk
 Return
 
-F23::
+F21::
 Send, git fetch{Enter}
 Return
 
->^F23::
+>^F21::
 Send, git pull{Enter}
 Return
 
@@ -156,76 +132,58 @@ Return
 Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
 Return
 
-NumpadHome::
+Numpad7::
 Send, {Alt Down}l{Alt Up}m{Enter}
 Return
 
->^NumpadHome::
+>^Numpad7::
 Send, {Alt Down}l{Alt Up}t{Enter}
 Return
 
-NumpadUp::
+Numpad8::
 Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
 Return
 
->^NumpadUp::
+>^Numpad8::
 Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
 Return
 
-NumpadPgUp::
+Numpad9::
 Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
 Return
 
->^NumpadPgUp::
+>^Numpad9::
 Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
 Return
 
-NumpadLeft::
+NumpadDot::
 Send, {PrintScreen}
 Return
 
->^NumpadLeft::
-Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
+>^NumpadDot::
+Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
 Return
 
-NumpadClear::
+Numpad5::
 Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
 Return
 
->^NumpadClear::
+>^Numpad5::
 Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
 Return
 
-NumpadRight::
+Numpad6::
 FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 SendInput %CurrentDateTime%
 Return
 
-NumpadEnd::
+NumpadAdd::
 Send, {Control Down}{Shift Down}x{Shift Up}{Control Up} 
 Return
 
->^NumpadEnd::
+>^NumpadAdd::
 Send, {Control Down}{Shift Down}s{Shift Up}{Control Up}{asc 0037}USERPROFILE{asc 0037}\Desktop\
 FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 SendInput %CurrentDateTime%
 Send, {Tab}pj{Enter}{Tab 4}90{Enter}
 Return
-
-NumpadDown::
-Send, {CtrlDown}r{CtrlUp}{ShiftDown}{Tab 3}{ShiftUp}33{Enter}
-Return
-
->^NumpadDown::
-Send, {CtrlDown}r{CtrlUp}{ShiftDown}{Tab 3}{ShiftUp}50{Enter}
-Return
-
-NumpadPgDn::
-Send, {CtrlDown}{ShiftDown}r{CtrlUp}{ShiftUp}{Tab 7}m{Tab 3}200{Enter}
-Return
-
->^NumpadPgDn::
-Send, {CtrlDown}{ShiftDown}r{CtrlUp}{ShiftUp}{Tab 7}m{Tab 3}1000{Enter}
-Return
-
-
