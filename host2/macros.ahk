@@ -37,7 +37,7 @@ Send, {Media_Next}
 return
 
 >+F15::
-Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 1
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -46,7 +46,7 @@ Send, {Enter}
 return
 
 >+>^F15::
-Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 3
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 3
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -55,7 +55,7 @@ Send, {Enter}
 return
 
 >+F16::
-Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 0
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 0
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -64,7 +64,7 @@ Send, {Enter}
 return
 
 >+>^F16::
-Run, D:\Repositories\git-macros-lua-ahk\host2\decrypt_password.bat 2
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -132,47 +132,47 @@ Return
 Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
 Return
 
-Numpad7::
+NumpadHome::
 Send, {Alt Down}l{Alt Up}m{Enter}
 Return
 
->^Numpad7::
+>^NumpadHome::
 Send, {Alt Down}l{Alt Up}t{Enter}
 Return
 
-Numpad8::
+NumpadUp::
 Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
 Return
 
->^Numpad8::
+>^NumpadUp::
 Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
 Return
 
-Numpad9::
+NumpadPgup::
 Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
 Return
 
->^Numpad9::
+>^NumpadPgup::
 Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
 Return
 
-NumpadDot::
+NumpadDel::
 Send, {PrintScreen}
 Return
 
->^NumpadDot::
-Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
+>^NumpadDel::
+Run,  D:\Repositories\git-macros-lua-ahk\host1\get_latest_screenshot.bat
 Return
 
-Numpad5::
+NumpadClear::
 Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
 Return
 
->^Numpad5::
+>^NumpadClear::
 Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
 Return
 
-Numpad6::
+NumpadRight::
 FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 SendInput %CurrentDateTime%
 Return
