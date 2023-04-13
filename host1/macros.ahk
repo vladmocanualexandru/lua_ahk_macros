@@ -55,7 +55,7 @@ Send, {Enter}
 return
 
 >+F15::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -82,7 +82,7 @@ Send, {Enter}
 return
 
 >+>^F16::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
