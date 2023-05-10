@@ -62,11 +62,26 @@ Return
 Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
 Return
 
-NumpadHome::
+>^NumpadHome::
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 4
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+Return
+
+>^>!NumpadHome::
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 5
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
 Return
 
 >^NumpadUp::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
@@ -93,7 +108,7 @@ Send, {Enter}
 return
 
 >^>!NumpadPgup::
-Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 2
+Run, D:\Repositories\git-macros-lua-ahk\host1\decrypt_password.bat 1
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 FileDelete, D:\Temp\pass.txt
