@@ -20,97 +20,80 @@ Return
 Run,  D:\Repositories\personal\macros\host1\get_latest_screenshot.bat
 Return
 
-#n::
-Run, notepad++
-Return
-
-#c::
-Run, calc
-Return
-
-#b::
-Run, D:\Repositories\open_git_bash_here.lnk
-Return
-
 F13::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 0
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
+Return
 
-+F13::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 1
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+<+F13::
+Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
+Return
 
 F14::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 2
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
+Return
 
-+F14::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 3
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+<+F14::
+Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
+Return
 
 F15::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 4
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
+Return
 
-+F15::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 5
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
-Send, {Enter}
-return
+<+F15::
+Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
+Return
 
-F22::
+F16::
+Send, {Alt Down}l{Alt Up}m{Enter}
+Return
+
+<+F16::
+Send, {Alt Down}l{Alt Up}t{Enter}
+Return
+
+F17::
+Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
+Return
+
+<+F17::
+Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
+Return
+
+F18::
+Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
+Return
+
+<+F18::
+Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
+Return
+
+F19::
+Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
+Return
+
+<+F19::
+Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
+Return
+
+F20::
+FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
+SendInput %CurrentDateTime%
+Return
+
+F21::
 Send, {Volume_Down}{Volume_Down}
 return
 
-+F22::
++F21::
 Send, {Media_Prev}
 return
 
-F24::
+F22::
 Send, {Volume_Up}{Volume_Up}
 return
 
-+F24::
++F22::
 Send, {Media_Next}
 return
 
@@ -122,63 +105,74 @@ return
 Send, {Media_Play_Pause}
 return
 
-NumpadDot::
-FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
-SendInput %CurrentDateTime%
-Return
+NumpadEnd::
+Numpad1::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 0
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
 
-Numpad7::
-Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
-Return
-
-NumpadHome::
-Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
-Return
-
-Numpad8::
-Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
-Return
-
-NumpadUp::
-Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
-Return
-
-Numpad9::
-Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
-Return
-
-NumpadPgup::
-Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
-Return
-
-Numpad4::
-Send, {Alt Down}l{Alt Up}m{Enter}
-Return
-
-NumpadLeft::
-Send, {Alt Down}l{Alt Up}t{Enter}
-Return
-
-Numpad5::
-Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
-Return
-
-NumpadClear::
-Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
-Return
-
-Numpad6::
-Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
-Return
-
-NumpadRight::
-Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
-Return
-
-Numpad2::
-Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
-Return
+<+NumpadEnd::
+<+Numpad1::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 1
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
 
 NumpadDown::
-Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
-Return
+Numpad2::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 2
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
+
++NumpadDown::
++Numpad2::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 3
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
+
+NumpadPgdn::
+Numpad3::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 4
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
+
++NumpadPgdn::
++Numpad3::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 5
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
