@@ -20,6 +20,10 @@ Return
 Run,  D:\Repositories\personal\macros\host1\get_latest_screenshot.bat
 Return
 
+#b::
+Run, D:\Repositories\open_git_bash_here.lnk
+Return
+
 #n::
 Run, notepad++
 Return
@@ -28,8 +32,8 @@ Return
 Run, calc
 Return
 
-#b::
-Run, D:\Repositories\open_git_bash_here.lnk
+#t::
+Run, wt
 Return
 
 F13::
@@ -89,6 +93,17 @@ return
 
 +F15::
 Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 5
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+sleep, 500
+FileRead, decryptedPassword, D:\Temp\pass.txt
+FileDelete, D:\Temp\pass.txt
+Send, %decryptedPassword%
+Send, {Enter}
+return
+
+F16::
+Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 6
 sleep, 500
 FileRead, decryptedPassword, D:\Temp\pass.txt
 sleep, 500
