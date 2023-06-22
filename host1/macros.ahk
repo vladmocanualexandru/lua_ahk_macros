@@ -6,9 +6,24 @@ SendMode Input
 #SingleInstance force ;only one instance of this script may run at a time!
 #MaxHotkeysPerInterval 2000
 
-^+v::                                        ; Paste without formatting
+makeRestCall(url, method, data)
+{
+    whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+    whr.Open(method, url, true)
+    whr.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    whr.Send(data)
+    whr.WaitForResponse()
+    return whr.ResponseText
+}
+
+decrypt(id)
+{
+    return makeRestCall("http://localhost:5001/decrypt", "POST", "id="+id)
+}
+
+^+v::                   ; Paste without formatting
 Clipboard=%Clipboard%   ; will remove formatting
-Sleep, 100   ; wait for Clipboard to update
+Sleep, 100              ; wait for Clipboard to update
 Send ^v
 return
 
@@ -36,82 +51,44 @@ Return
 Run, wt
 Return
 
+NumpadEnter::
+Send, {CtrlDown}{AltDown}{Delete}{CtrlUp}{AltUp}
+Return
+
 F13::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 0
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(1)
 Send, {Enter}
-return
+Return
 
 +F13::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 1
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(2)
 Send, {Enter}
-return
+Return
 
 F14::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 2
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(3)
 Send, {Enter}
-return
+Return
 
 +F14::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 3
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(4)
 Send, {Enter}
-return
+Return
 
 F15::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 4
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(5)
 Send, {Enter}
-return
+Return
 
 +F15::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 5
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(6)
 Send, {Enter}
-return
+Return
 
 F16::
-Run, D:\Repositories\personal\macros\host1\decrypt_password.bat 6
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-sleep, 500
-FileRead, decryptedPassword, D:\Temp\pass.txt
-FileDelete, D:\Temp\pass.txt
-Send, %decryptedPassword%
+Send % decrypt(7)
 Send, {Enter}
-return
+Return
 
 F22::
 Send, {Volume_Down}{Volume_Down}
