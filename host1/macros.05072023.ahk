@@ -51,123 +51,130 @@ Return
 Run, wt
 Return
 
+NumpadEnter::
+Send, {CtrlDown}{AltDown}{Delete}{CtrlUp}{AltUp}
+Return
+
 ^Numpad1::
+Send, WORKS!!!
+Return
+
+F13::
 Send % decrypt(1)
 Send, {Enter}
 Return
 
-^NumpadEnd::
++F13::
 Send % decrypt(2)
 Send, {Enter}
 Return
 
-^Numpad2::
+F14::
 Send % decrypt(3)
 Send, {Enter}
 Return
 
-^NumpadDown::
++F14::
 Send % decrypt(4)
 Send, {Enter}
 Return
 
-^Numpad3::
+F15::
 Send % decrypt(5)
 Send, {Enter}
 Return
 
-^NumpadPgdn::
++F15::
 Send % decrypt(6)
 Send, {Enter}
 Return
 
-^Numpad4::
+F16::
 Send % decrypt(7)
 Send, {Enter}
 Return
 
-^Numpad0::
+F22::
 Send, {Volume_Down}{Volume_Down}
 return
 
-^NumpadIns::
++F22::
 Send, {Media_Prev}
 return
 
-^NumpadSub::
-Send, {Volume_Mute}
-return
-
-+^NumpadSub::
-Send, {Media_Play_Pause}
-return
-
-^NumpadAdd::
+F24::
 Send, {Volume_Up}{Volume_Up}
 return
 
-+^NumpadAdd::
++F24::
 Send, {Media_Next}
 return
 
-F13::
-Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
-Return
+F23::
+Send, {Volume_Mute}
+return
 
-+F13::
-Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
-Return
++F23::
+Send, {Media_Play_Pause}
+return
 
-F14::
-Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
-Return
-
-+F14::
-Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
-Return
-
-F15::
-Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
-Return
-
-+F15::
-Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
-Return
-
-F16::
-Send, {Alt Down}l{Alt Up}m{Enter}
-Return
-
-+F16::
-Send, {Alt Down}l{Alt Up}t{Enter}
-Return
-
-F17::
-Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
-Return
-
-+F17::
-Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
-Return
-
-F18::
-Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
-Return
-
-+F18::
-Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
-Return
-
-F20::
-Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
-Return
-
-+F20::
-Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
-Return
-
-F22::
+NumpadDot::
 FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
 SendInput %CurrentDateTime%
 Return
 
+Numpad7::
+Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
+Return
+
+NumpadHome::
+Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
+Return
+
+Numpad8::
+Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
+Return
+
+NumpadUp::
+Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
+Return
+
+Numpad9::
+Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
+Return
+
+NumpadPgup::
+Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
+Return
+
+Numpad4::
+Send, {Alt Down}l{Alt Up}m{Enter}
+Return
+
+NumpadLeft::
+Send, {Alt Down}l{Alt Up}t{Enter}
+Return
+
+Numpad5::
+Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
+Return
+
+NumpadClear::
+Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
+Return
+
+Numpad6::
+Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
+Return
+
+NumpadRight::
+Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
+Return
+
+Numpad2::
+Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
+Return
+
+NumpadDown::
+Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
+Return
