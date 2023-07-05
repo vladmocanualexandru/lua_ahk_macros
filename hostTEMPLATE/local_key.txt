@@ -1,1 +1,0 @@
-A 32 char key - is used to decrypt the remote key
