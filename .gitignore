@@ -4,3 +4,4 @@ remote_key.txt
 encrypted_passwords.txt
 /host1/encrypted_passwords.txt
 /host2/encrypted_passwords.txt
+*.lnk

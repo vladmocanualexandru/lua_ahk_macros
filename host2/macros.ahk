@@ -1,14 +1,8 @@
-#NoEnv
-
-SendMode Input
-#InstallKeybdHook
-#UseHook On
-#SingleInstance force ;only one instance of this script may run at a time!
-#MaxHotkeysPerInterval 2000
+; ---------------------------------------------- HELPER FUNCTIONS ----------------------------------------------
 
 makeRestCall(url, method, data)
 {
-    whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+    whr := ComObject("WinHttp.WinHttpRequest.5.1")
     whr.Open(method, url, true)
     whr.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     whr.Send(data)
@@ -16,142 +10,179 @@ makeRestCall(url, method, data)
     return whr.ResponseText
 }
 
-decrypt(id)
+
+
+; ---------------------------------------------- UTILITY MACROS ----------------------------------------------
+
+^+v:: ; paste clipboard without formatting
 {
-    return makeRestCall("http://localhost:5010/decrypt", "POST", "id="+id)
+    clipboard := A_Clipboard 
+    Send clipboard
 }
 
-^+v::                                        ; Paste without formatting
-Clipboard=%Clipboard%   ; will remove formatting
-Sleep, 100   ; wait for Clipboard to update
-Send ^v
-return
++Printscreen:: ; open latest screeshot in greenshot
+{
+    Run "D:\Repositories\macros_lua_ahk\host2\get_latest_screenshot.bat"
+}
 
-PrintScreen::
-Send, {PrintScreen}
-Return
+#b:: ; open git_bash in repositories folder
+{
+    Run "D:\Repositories\open_git_bash_here.lnk"
+}
 
-+PrintScreen::
-Run,  D:\Repositories\git-macros-lua-ahk\host2\get_latest_screenshot.bat
-Return
+F22:: ; generate timestamp
+{
+    formattedTime := FormatTime(,"ddMMMyyyy_HHmmss")
+    Send formattedTime
+}
 
-#b::
-Run, D:\Repositories\open_git_bash_here.lnk
-Return
++^!Esc:: ; publish mqtt shutdown message
+{
+    MsgBox "shutdown!"
+}
 
-#n::
-Run, notepad++
-Return
+; ---------------------------------------------- APPLICATIONS ----------------------------------------------
 
-#c::
-Run, calc
-Return
+#c:: ; open calculator
+{
+    Run "calc"
+}
 
-#t::
-Run, wt
-Return
+#t:: ; open terminal
+{
+    Run "wt"
+}
 
-F13::
-Send % decrypt(1)
-Send, {Enter}
-Return
+#n:: ; open notepad++
+{
+    Run "notepad++"
+}
 
-+F13::
-Send % decrypt(2)
-Send, {Enter}
-Return
 
-F14::
-Send % decrypt(3)
-Send, {Enter}
-Return
 
-+F14::
-Send % decrypt(4)
-Send, {Enter}
-Return
+; ---------------------------------------------- MEDIA ----------------------------------------------
 
-F22::
-Send, {Volume_Down}{Volume_Down}
-return
+^Numpad0:: ; volume down
+{
+    Send "{Volume_Down}"
+}
 
-+F22::
-Send, {Media_Prev}
-return
+^NumpadSub:: ; volume mute
+{
+    Send "{Volume_Mute}"
+}
 
-F24::
-Send, {Volume_Up}{Volume_Up}
-return
+^NumpadAdd:: ; volume up
+{
+    Send "{Volume_Up}"
+}
 
-+F24::
-Send, {Media_Next}
-return
+^NumpadIns:: ; previous song
+{
+    Send "{Media_Prev}"
+}
 
-F23::
-Send, {Volume_Mute}
-return
++^NumpadSub:: ; play/pause
+{
+    Send "{Media_Play_Pause}"
+}
 
-+F23::
-Send, {Media_Play_Pause}
-return
++^NumpadAdd:: ; next song
+{
+    Send "{Media_Next}"
+}
 
-NumpadDot::
-FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
-SendInput %CurrentDateTime%
-Return
 
-Numpad7::
-Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
-Return
 
-NumpadHome::
-Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
-Return
+; ---------------------------------------------- KONFIDANTEA ----------------------------------------------
+decrypt(id)
+{
+    return makeRestCall("http://127.0.0.1:5010/decrypt", "POST", "id=" id)
+}
 
-Numpad8::
-Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
-Return
+^Numpad1::
+{
+    Send decrypt(1) "{Enter}"
+}
 
-NumpadUp::
-Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
-Return
+^NumpadEnd::
+{
+    Send decrypt(2) "{Enter}"
+}
 
-Numpad9::
-Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
-Return
+^Numpad2::
+{
+    Send decrypt(3) "{Enter}"
+}
 
-NumpadPgup::
-Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
-Return
 
-Numpad4::
-Send, {Alt Down}l{Alt Up}m{Enter}
-Return
+; ---------------------------------------------- AFFINITY DESIGNER ----------------------------------------------
+F13:: ; space horizontally
+{
+    Send "{Alt Down}l{Alt Up}m{Down 6}{Enter}" 
+}
 
-NumpadLeft::
-Send, {Alt Down}l{Alt Up}t{Enter}
-Return
++F13:: ; distribute horizontally
+{
+    Send "{Alt Down}l{Alt Up}m{Down 8}{Enter}"
+}
 
-Numpad5::
-Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
-Return
+F14:: ; align top
+{
+    Send "{Alt Down}l{Alt Up}m{Down 3}{Enter}"
+}
 
-NumpadClear::
-Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
-Return
++F14:: ; flip horizontally
+{
+    Send "{Alt Down}l{Alt Up}t{Down 2}{Enter}"  
+}
 
-Numpad6::
-Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
-Return
+F15:: ; space vertically
+{
+    Send "{Alt Down}l{Alt Up}m{Down 7}{Enter}"
+}
 
-NumpadRight::
-Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
-Return
++F15:: ; distribute vertically
+{
+    Send "{Alt Down}l{Alt Up}m{Down 9}{Enter}"
+}
 
-Numpad2::
-Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
-Return
+F16:: ; align left
+{
+    Send "{Alt Down}l{Alt Up}m{Enter}"
+}
 
-NumpadDown::
-Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
-Return
++F16:: ; rotate left
+{
+    Send "{Alt Down}l{Alt Up}t{Enter}"
+}
+
+F17:: ; align middle
+{
+    Send "{Alt Down}l{Alt Up}m{Down 1}{Enter}"
+}
+
++F17:: ; align center
+{
+    Send "{Alt Down}l{Alt Up}m{Down 4}{Enter}"
+}
+
+F18:: ; align right
+{
+    Send "{Alt Down}l{Alt Up}m{Down 2}{Enter}"
+}
+
++F18:: ; rotate right
+{
+    Send "{Alt Down}l{Alt Up}t{Down 1}{Enter}"
+}
+
+F20:: ; align bottom
+{
+    Send "{Alt Down}l{Alt Up}m{Down 5}{Enter}"
+}
+
++F20:: ; flip vertically
+{
+    Send "{Alt Down}l{Alt Up}t{Down 3}{Enter}"
+}
