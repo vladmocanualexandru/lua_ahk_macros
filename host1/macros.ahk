@@ -52,7 +52,7 @@ Run, wt
 Return
 
 ^Numpad1::
-Send % decrypt(1)
+Send % decrypt(8)
 Send, {Enter}
 Return
 
