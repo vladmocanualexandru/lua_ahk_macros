@@ -38,7 +38,7 @@ F22:: ; generate timestamp
 
 +^!Esc:: ; publish mqtt shutdown message
 {
-	Run A_ComSpec " /c D:\Repositories\home_hub\scripts\.venv\Scripts\python.exe D:\Repositories\home_hub\scripts\publish_shutdown_message.py"
+	Run A_ComSpec " /c D:\Repositories\home_hub\scripts\.venv\Scripts\python.exe D:\Repositories\home_hub\scripts\publish_aqirys_command.py"
 }
 
 ; ---------------------------------------------- APPLICATIONS ----------------------------------------------
