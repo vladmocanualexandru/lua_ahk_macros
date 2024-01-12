@@ -56,32 +56,32 @@ Send % decrypt(8)
 Send, {Enter}
 Return
 
-^NumpadEnd::
+^Numpad2::
 Send % decrypt(2)
 Send, {Enter}
 Return
 
-^Numpad2::
+^Numpad3::
 Send % decrypt(3)
 Send, {Enter}
 Return
 
-^NumpadDown::
+^Numpad4::
 Send % decrypt(4)
 Send, {Enter}
 Return
 
-^Numpad3::
+^Numpad5::
 Send % decrypt(5)
 Send, {Enter}
 Return
 
-^NumpadPgdn::
+^Numpad6::
 Send % decrypt(6)
 Send, {Enter}
 Return
 
-^Numpad4::
+^Numpad7::
 Send % decrypt(7)
 Send, {Enter}
 Return
