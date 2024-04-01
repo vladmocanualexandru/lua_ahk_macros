@@ -1,14 +1,8 @@
-#NoEnv
-
-SendMode Input
-#InstallKeybdHook
-#UseHook On
-#SingleInstance force ;only one instance of this script may run at a time!
-#MaxHotkeysPerInterval 2000
+; ---------------------------------------------- HELPER FUNCTIONS ----------------------------------------------
 
 makeRestCall(url, method, data)
 {
-    whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+    whr := ComObject("WinHttp.WinHttpRequest.5.1")
     whr.Open(method, url, true)
     whr.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     whr.Send(data)
@@ -16,158 +10,96 @@ makeRestCall(url, method, data)
     return whr.ResponseText
 }
 
-decrypt(id)
+
+
+; ---------------------------------------------- UTILITY MACROS ----------------------------------------------
+
+^+v:: ; paste clipboard without formatting
 {
-    return makeRestCall("http://localhost:5001/decrypt", "POST", "id="+id)
+    clipboard := A_Clipboard 
+    Send clipboard
 }
 
-^+v::                   ; Paste without formatting
-Clipboard=%Clipboard%   ; will remove formatting
-Sleep, 100              ; wait for Clipboard to update
-Send ^v
-return
+F22:: ; print screen
+{
+	Send "{PrintScreen}"
+}
 
-PrintScreen::
-Send, {PrintScreen}
-Return
 
-+PrintScreen::
-Run,  D:\Repositories\personal\macros\host1\get_latest_screenshot.bat
-Return
++F22::
++PrintScreen:: ; open latest screeshot in greenshot
+{
+    Run "D:\Repositories\personal\macros\host1\get_latest_screenshot.bat"
+}
 
-#b::
-Run, D:\Repositories\open_git_bash_here.lnk
-Return
+#b:: ; open git_bash in repositories folder
+{
+    Run "D:\Repositories\open_git_bash_here.lnk"
+}
 
-#n::
-Run, notepad++
-Return
+F17:: ; generate timestamp
+{
+    formattedTime := FormatTime(,"ddMMMyyyy_HHmmss")
+    Send formattedTime
+}
 
-#c::
-Run, calc
-Return
+; ---------------------------------------------- APPLICATIONS ----------------------------------------------
 
-#t::
-Run, wt
-Return
+#c:: ; open calculator
+{
+    Run "calc"
+}
 
-^Numpad1::
-Send % decrypt(8)
-Send, {Enter}
-Return
+#t:: ; open terminal
+{
+    Run "wt"
+}
 
-^Numpad2::
-Send % decrypt(2)
-Send, {Enter}
-Return
+#n:: ; open notepad++
+{
+    Run "notepad++"
+}
 
-^Numpad3::
-Send % decrypt(3)
-Send, {Enter}
-Return
+; ---------------------------------------------- BASH -----------------------------------------------------
 
-^Numpad4::
-Send % decrypt(4)
-Send, {Enter}
-Return
+^Enter:: ; list contents of current folder
+{
+	Send "ls -ahl {Enter}"
+}
 
-^Numpad5::
-Send % decrypt(5)
-Send, {Enter}
-Return
+^Up:: ; navigate to parent folder
+{
+	Send "cd .. {Enter}"
+}
 
-^Numpad6::
-Send % decrypt(6)
-Send, {Enter}
-Return
-
-^Numpad7::
-Send % decrypt(7)
-Send, {Enter}
-Return
-
-^Numpad0::
-Send, {Volume_Down}{Volume_Down}
-return
-
-^NumpadIns::
-Send, {Media_Prev}
-return
-
-^NumpadSub::
-Send, {Volume_Mute}
-return
-
-+^NumpadSub::
-Send, {Media_Play_Pause}
-return
-
-^NumpadAdd::
-Send, {Volume_Up}{Volume_Up}
-return
-
-+^NumpadAdd::
-Send, {Media_Next}
-return
+; ---------------------------------------------- KONFIDANTEA ----------------------------------------------
+decrypt(id)
+{
+    return makeRestCall("http://127.0.0.1:5001/decrypt", "POST", "id=" id)
+}
 
 F13::
-Send, {Alt Down}l{Alt Up}m{Down 6}{Enter} 
-Return
-
-+F13::
-Send, {Alt Down}l{Alt Up}m{Down 8}{Enter}
-Return
+{
+    Send decrypt(8) "{Enter}"
+}
 
 F14::
-Send, {Alt Down}l{Alt Up}m{Down 3}{Enter}  
-Return
-
-+F14::
-Send, {Alt Down}l{Alt Up}t{Down 2}{Enter}   
-Return
+{
+    Send decrypt(2) "{Enter}"
+}
 
 F15::
-Send, {Alt Down}l{Alt Up}m{Down 7}{Enter}
-Return
-
-+F15::
-Send, {Alt Down}l{Alt Up}m{Down 9}{Enter} 
-Return
+{
+    Send decrypt(3) "{Enter}"
+}
 
 F16::
-Send, {Alt Down}l{Alt Up}m{Enter}
-Return
+{
+    Send decrypt(4) "{Enter}"
+}
 
-+F16::
-Send, {Alt Down}l{Alt Up}t{Enter}
-Return
-
-F17::
-Send, {Alt Down}l{Alt Up}m{Down 1}{Enter}
-Return
-
-+F17::
-Send, {Alt Down}l{Alt Up}m{Down 4}{Enter}
-Return
-
-F18::
-Send, {Alt Down}l{Alt Up}m{Down 2}{Enter}
-Return
-
-+F18::
-Send, {Alt Down}l{Alt Up}t{Down 1}{Enter}
-Return
-
-F20::
-Send, {Alt Down}l{Alt Up}m{Down 5}{Enter}
-Return
-
-+F20::
-Send, {Alt Down}l{Alt Up}t{Down 3}{Enter}
-Return
-
-F22::
-FormatTime, CurrentDateTime,, ddMMMyyyy_HHmmss
-SendInput %CurrentDateTime%
-Return
+F21::
+{
+    Send decrypt(9) "{Enter}"
+}
 
